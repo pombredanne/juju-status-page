@@ -4,7 +4,8 @@ import yaml
 
 def juju_output():
     output = subprocess.check_output(["juju", "status"])
-    return yaml.load(output, Loader=yaml.Loader)
+    data = yaml.load(output, Loader=yaml.Loader)
+    return extract_machines(data), extract_services(data)
 
 
 def extract_machines(data):

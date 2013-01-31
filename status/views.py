@@ -1,12 +1,12 @@
 from django.shortcuts import render_to_response
 
-from data import extract_machines, extract_services, juju_output
+from data import juju_output
 
 
 def index(request):
-    output = juju_output()
+    machines, services = juju_output()
     context = {
-        "machines": extract_machines(output),
-        "services": extract_services(output),
+        "machines": machines,
+        "services": services,
     }
     return render_to_response("status.html", context)
