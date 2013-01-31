@@ -7,18 +7,16 @@
     <thead>
         <tr>
             <th>id</th>
-            {% for key, value in data.machines.0.items %}
-            <th>{{ key }}</th>
-            {% endfor %}
+            <th>agent state</th>
+            <th>instance state</th>
         </tr>
     </thead>
     <tbody>
-        {% for id, machine in data.machines.items %}
+        {% for machine in machines %}
         <tr>
-            <td>{{ id }}</td>
-            {% for key, value in machine.items %}
-            <td>{{ value }}</td>
-            {% endfor %}
+            <td>{{ machine.0 }}</td>
+            <td>{{ machine.1 }}</td>
+            <td>{{ machine.2 }}</td>
         </tr>
         {% endfor %}
     </tbody>
