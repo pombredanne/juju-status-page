@@ -1,1 +1,1 @@
-Django==1.5c1
+git+git://github.com/django/django.git@stable/1.5.x#egg=django
