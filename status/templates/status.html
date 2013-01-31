@@ -6,9 +6,9 @@
 <table class="table">
     <thead>
         <tr>
-            <td>id</td>
+            <th>id</th>
             {% for key, value in data.machines.0.items %}
-            <td>{{ key }}</td>
+            <th>{{ key }}</th>
             {% endfor %}
         </tr>
     </thead>
@@ -27,9 +27,9 @@
 <table class="table">
     <thead>
         <tr>
-            <td>id</td>
+            <th>id</th>
             {% for key, value in data.services.values.0.values.0.values.0.items %}
-                <td>{{ key }}</td>
+                <th>{{ key }}</th>
             {% endfor %}
         </tr>
     </thead>
