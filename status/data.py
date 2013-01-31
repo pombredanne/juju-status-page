@@ -1,4 +1,7 @@
-output = """machines:
+import yaml
+
+
+raw = """machines:
     0:
         agent-state: running
         dns-name: 0.status.com
@@ -88,3 +91,5 @@ services:
                 agent-state: started
                 machine: 129
                 public-address: 129.status.com"""
+
+output = yaml.load(raw, Loader=yaml.Loader)
