@@ -16,7 +16,9 @@ class StatusViewTest(SimpleTestCase):
         response = client.get(reverse("status"))
         self.assertEqual(response.status_code, 200)
         output = yaml.load(raw, Loader=yaml.Loader)
+        machines = extract_machines(output)
         self.assertDictEqual(response.context['data'], output)
+        self.assertListEqual(response.context['machines'], machines)
         check_output.assert_called_with(["juju", "status"])
 
 
