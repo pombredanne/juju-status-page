@@ -7,7 +7,19 @@
 </ul>
 <h2 id="heading">Services</h2>
 <ul>
-    {% for service in data.services %}
-    <li>{{ service }}</li>
+    {% for name, service  in data.services.items %}
+    <li>
+        <h1>{{ name }}</h1>
+        {% for unit_name, unit in service.units.items %}
+        <div id="">
+            <h2 id="heading">{{ unit_name }}</h2>
+            <ul>
+            {% for key, value in unit.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </li>
     {% endfor %}
 </ul>
