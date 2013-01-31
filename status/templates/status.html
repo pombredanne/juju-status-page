@@ -3,18 +3,26 @@
 {% block content %}
 <h1>juju status</h1>
 <h2 id="heading">Machines</h2>
-<ul>
-    {% for id, machine in data.machines.items %}
-    <li>
-        <h1>{{ id }}</h1>
-        <ul>
-        {% for key, value in machine.items %}
-            <li>{{ key }} - {{ value }}
+<table class="table">
+    <thead>
+        <tr>
+            <td>id</td>
+            {% for key, value in data.machines.0.items %}
+            <td>{{ key }}</td>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for id, machine in data.machines.items %}
+        <tr>
+            <td>{{ id }}</td>
+            {% for key, value in machine.items %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
         {% endfor %}
-        </ul>
-    </li>
-    {% endfor %}
-</ul>
+    </tbody>
+</table>
 <h2 id="heading">Services</h2>
 <ul>
     {% for name, service  in data.services.items %}
