@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         {% for machine in machines %}
-        <tr>
+        <tr class="{% if machine.1 == "running" and machine.2 == "running" %}success{% else %}error{% endif %}">
             <td>{{ machine.0 }}</td>
             <td>{{ machine.1 }}</td>
             <td>{{ machine.2 }}</td>
@@ -31,7 +31,7 @@
     </thead>
     <tbody>
         {% for unit in services %}
-        <tr>
+        <tr class="{% if unit.1 == "started" %}success{% else %}error{% endif %}">
             <td>{{ unit.0 }}</td>
             <td>{{ unit.1 }}</td>
         </tr>
