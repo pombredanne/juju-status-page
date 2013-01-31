@@ -1,0 +1,13 @@
+<h1>juju status</h1>
+<h2 id="heading">Machines</h2>
+<ul>
+    {% for machine in data.machines %}
+    <li>{{ machine }}</li>
+    {% endfor %}
+</ul>
+<h2 id="heading">Services</h2>
+<ul>
+    {% for service in data.services %}
+    <li>{{ service }}</li>
+    {% endfor %}
+</ul>
