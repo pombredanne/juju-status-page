@@ -1,0 +1,11 @@
+language: python
+install:
+  - pip install -qr requirements.txt --user-mirrors
+script:
+  - python manage.py test
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.net#tsuru"
+    on_success: change
+    on_failure: always
