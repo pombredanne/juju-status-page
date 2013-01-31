@@ -1,3 +1,10 @@
+import os.path
+
+BASE_PATH = os.path.dirname(os.path.dirname(__file__))
+
+TEST_DISCOVERY_ROOT = BASE_PATH
+TEST_RUNNER = "tests.runner.DiscoveryRunner"
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
