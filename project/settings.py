@@ -1,10 +1,8 @@
 import os.path
 
-# BASE_PATH = os.path.dirname(os.path.dirname(__file__))
-BASE_PATH = os.path.abspath(os.path.dirname(__file__))
+BASE_PATH = os.path.dirname(__file__)
 
-
-TEST_DISCOVERY_ROOT = BASE_PATH
+TEST_DISCOVERY_ROOT = os.path.dirname(BASE_PATH)
 TEST_RUNNER = "tests.runner.DiscoveryRunner"
 
 DEBUG = True
