@@ -1,8 +1,15 @@
 <h1>juju status</h1>
 <h2 id="heading">Machines</h2>
 <ul>
-    {% for machine in data.machines %}
-    <li>{{ machine }}</li>
+    {% for id, machine in data.machines.items %}
+    <li>
+        <h1>{{ id }}</h1>
+        <ul>
+        {% for key, value in machine.items %}
+            <li>{{ key }} - {{ value }}
+        {% endfor %}
+        </ul>
+    </li>
     {% endfor %}
 </ul>
 <h2 id="heading">Services</h2>
