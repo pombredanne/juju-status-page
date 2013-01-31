@@ -1,6 +1,8 @@
 import os.path
 
-BASE_PATH = os.path.dirname(os.path.dirname(__file__))
+# BASE_PATH = os.path.dirname(os.path.dirname(__file__))
+BASE_PATH = os.path.abspath(os.path.dirname(__file__))
+
 
 TEST_DISCOVERY_ROOT = BASE_PATH
 TEST_RUNNER = "tests.runner.DiscoveryRunner"
@@ -19,9 +21,11 @@ SITE_ID = 1
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_PATH, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+    os.path.join(BASE_PATH, 'static_files'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
