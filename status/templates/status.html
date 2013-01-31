@@ -26,21 +26,15 @@
     <thead>
         <tr>
             <th>id</th>
-            {% for key, value in data.services.values.0.values.0.values.0.items %}
-                <th>{{ key }}</th>
-            {% endfor %}
+            <th>agent state</th>
         </tr>
     </thead>
     <tbody>
-        {% for name, service  in data.services.items %}
-            {% for unit_name, unit in service.units.items %}
-                <tr>
-                <td>{{ unit_name }}</td>
-                {% for key, value in unit.items %}
-                    <td>{{ value }}</td>
-                {% endfor %}
-                </tr>
-            {% endfor %}
+        {% for unit in services %}
+        <tr>
+            <td>{{ unit.0 }}</td>
+            <td>{{ unit.1 }}</td>
+        </tr>
         {% endfor %}
     </tbody>
 </table>
